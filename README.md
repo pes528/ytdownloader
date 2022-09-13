@@ -8,7 +8,7 @@ Utilizar la version de python 3+
 wget https://raw.githubusercontent.com/pes528/ytdownloader/main/main.py && chmod +x main.py && python main.py
 
 # Instalacion
-git clone https://github.com/pes528/ytdownloader
-cd ytdownloader
-chmod +x main.py
-python main.py
+git clone https://github.com/pes528/ytdownloader<br>
+cd ytdownloader<br>
+chmod +x main.py<br>
+python main.py<br>
