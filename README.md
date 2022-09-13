@@ -11,9 +11,12 @@ Utilizar la version de python 3+<br>
 
 # Instalacion Rapida:
 
-wget https://raw.githubusercontent.com/pes528/ytdownloader/main/main.py && chmod +x main.py && python main.py
+apt update && apt upgrade -y && wget https://raw.githubusercontent.com/pes528/ytdownloader/main/main.py && chmod +x main.py && python main.py
 
 # Instalacion
+apt update && apt upgrade -y<br>
+apt install git<br>
+apt install python<br>
 git clone https://github.com/pes528/ytdownloader<br>
 cd ytdownloader<br>
 chmod +x main.py<br>
