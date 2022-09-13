@@ -1,7 +1,7 @@
 # ytdownloader
-Mini script para la descarga de videos y musica desde YouTube y Youtube music
-Todas las descargas se almacenan en la carpeta YTdescargas
-Utilizar la version de python 3+
+#Mini script para la descarga de videos y musica desde YouTube y Youtube music
+#Todas las descargas se almacenan en la carpeta YTdescargas
+#Utilizar la version de python 3+
 
 # Instalacion Rapida:
 
