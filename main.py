@@ -120,7 +120,7 @@ def music():
         return music()
 @d
 def descargarvideo():
-    print("="*17, "STANDAR DONWLOADER VIDEO", "="*17, "\n")
+    print("="*17, "STANDAR DOWNLOADER VIDEO", "="*17, "\n")
     print("Preciona 0 para volver\n")
     url = input("URL-->  ")
     if url == "0":
