@@ -73,7 +73,7 @@ def mai():
 
 
 """def most():
-    print("="*20, "MOST QUALITY DONWLOADER ", "="*20)
+    print("="*20, "MOST QUALITY DOWNLOADER ", "="*20)
     url = input("URL DEL VIDEO---> ")
     
     if verifica(url) == True:
@@ -93,7 +93,7 @@ def mai():
 
 @d
 def music():
-    print("="*20, "MP3 DONWLOADER ", "="*20)
+    print("="*20, "MP3 DOWNLOADER ", "="*20)
     print("Preciona 0 para volver")
     url = input("URL-->  ")
     if url == "0":
@@ -153,7 +153,7 @@ def descargarvideo():
         hecho()
         
     except:
-        print("ALGO SALIO MAL, O LA URL NO ES VALIDA")
+        print("ALGO SALIO MAL, POSIBLES RAZONES\n-LA URL NO ES VALIDA\n-VIDEO NO DISPONIBLE PARA DESCARGA")
         return descargarvideo()
 
 
