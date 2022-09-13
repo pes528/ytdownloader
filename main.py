@@ -10,7 +10,8 @@ except:
     from pytube import YouTube
 from tqdm import tqdm
 
-#telegram @pes528
+#AUTHOR: @pes528
+
 
 
 nor = "\033[1;38m"
