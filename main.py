@@ -98,7 +98,7 @@ def mai():
 
 @d
 def music():
-    print(" ", "="*11, "MP3 DONWLOADER ", "="*11)
+    print(" ", "="*11, "MP3 DOWNLOADER ", "="*11)
     print("Preciona 0 para volver")
     url = input("URL-->  ")
     if url == "0":
@@ -131,7 +131,7 @@ def music():
         return music()
 @d
 def descargarvideo():
-    print("="*8, "STANDAR DONWLOADER VIDEO", "="*8, "\n")
+    print("="*8, "STANDAR DOWNLOADER VIDEO", "="*8, "\n")
     print("Preciona 0 para volver\n")
     url = input("URL-->  ")
     if url == "0":
