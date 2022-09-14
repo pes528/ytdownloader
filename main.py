@@ -123,7 +123,7 @@ def music():
 
         except:
           print("ALGO SALIO MAL")
-          time.sleep()
+          time.sleep(2)
           return main()
 
 
