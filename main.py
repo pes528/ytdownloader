@@ -39,7 +39,7 @@ def logo():
     print("\033[1;32m"+"  |_|   |_|   |____/ \___/  \_/\_/  |_| \_|_____\___/_/   \_\____/|_____|_| \_\ \033[0m")
     print("")"""
     print(" \033[1;101m                by @pes528              \033[0m")
-
+    print(f"{rojito}—{fin}"*42)
 def verifica(link):
     try:
       YouTube(link).title
@@ -49,7 +49,7 @@ def verifica(link):
 
 
 
-@d
+
 def mai():
     
     op = input("""
@@ -97,8 +97,9 @@ def mai():
       print("URL NO VALIDO")
       return most()"""
 
-@d
+
 def music():
+    print(f"{rojito}—{fin}"*42)
     print(" ", "="*11, "MP3 DOWNLOADER ", "="*11)
     print("Preciona 0 para volver")
     url = input("URL-->  ")
@@ -130,8 +131,9 @@ def music():
         print("")
         print("URL NO VALIDO ")
         return music()
-@d
+
 def descargarvideo():
+    print(f"{rojito}—{fin}"*42)
     print("="*8, "STANDAR DOWNLOADER VIDEO", "="*8, "\n")
     print("Preciona 0 para volver\n")
     url = input("URL-->  ")
