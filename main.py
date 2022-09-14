@@ -5,14 +5,10 @@ try:
     from pytube import YouTube
 except:
     print("INSTALANDO DEPENDENCIAS...")
-    os.system("pip install pytube > dev/null 2>&1")
-    os.system("pip install tqdm > dev/null 2>&1")
+    os.system("pip install pytube > /dev/null 2>&1")
+    os.system("pip install tqdm > /dev/null 2>&1")
     from pytube import YouTube
 from tqdm import tqdm
-
-#AUTHOR: @pes528
-
-
 
 nor = "\033[1;38m"
 rojito = "\033[1;31m"
@@ -34,7 +30,7 @@ def logo():
     print("\033[1;32m"+"  |_|   |_|   |____/ \___/  \_/\_/  |_| \_|_____\___/_/   \_\____/|_____|_| \_\ \033[0m")
     print("")
     print("\033[1;101m                                   by @pes528                                   \033[0m")
-    print("                                            telegram:@pes528")
+
 def verifica(link):
     try:
       YouTube(link).title
@@ -42,14 +38,7 @@ def verifica(link):
     except:
       return False
 
-def hecho():
-    
-    for i in tqdm(range(10)):
-        time.sleep(0.5)
-    print("DESCARGA REALIZADA..")
-    print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
-    input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
-    return main()
+
 
 @d
 def mai():
@@ -73,7 +62,7 @@ def mai():
 
 
 """def most():
-    print("="*20, "MOST QUALITY DOWNLOADER ", "="*20)
+    print("="*20, "MOST QUALITY DONWLOADER ", "="*20)
     url = input("URL DEL VIDEO---> ")
     
     if verifica(url) == True:
@@ -93,7 +82,7 @@ def mai():
 
 @d
 def music():
-    print("="*20, "MP3 DOWNLOADER ", "="*20)
+    print("="*20, "MP3 DONWLOADER ", "="*20)
     print("Preciona 0 para volver")
     url = input("URL-->  ")
     if url == "0":
@@ -107,7 +96,12 @@ def music():
           e=yt.streams.get_audio_only()
           print("DESCARGANDO....")
           e.download(output_path="YTdescargas", filename=titu)
-          hecho()
+          for i in tqdm(range(10)):
+              time.sleep(0.5)
+          print("DESCARGA REALIZADA..")
+          print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
+          input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
+          return main()
 
         except:
           print("ALGO SALIO MAL")
@@ -120,7 +114,7 @@ def music():
         return music()
 @d
 def descargarvideo():
-    print("="*17, "STANDAR DOWNLOADER VIDEO", "="*17, "\n")
+    print("="*17, "STANDAR DONWLOADER VIDEO", "="*17, "\n")
     print("Preciona 0 para volver\n")
     url = input("URL-->  ")
     if url == "0":
@@ -150,10 +144,15 @@ def descargarvideo():
         dow=yt.streams.get_by_resolution(calidad)
         print("DESCARGANDO....")
         dow.download(output_path="YTdescargas")
-        hecho()
+        for i in tqdm(range(10)):
+            time.sleep(0.5)
+        print("DESCARGA REALIZADA..")
+        print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
+        input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
+        return main()
         
     except:
-        print("ALGO SALIO MAL, POSIBLES RAZONES\n-LA URL NO ES VALIDA\n-VIDEO NO DISPONIBLE PARA DESCARGA")
+        print("ALGO SALIO MAL, O LA URL NO ES VALIDA")
         return descargarvideo()
 
 
@@ -166,7 +165,6 @@ def main():
       os.mkdir("YTdescargas")
     logo()
     mai()
-
 
 
 if __name__ == "__main__":
