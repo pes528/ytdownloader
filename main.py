@@ -14,8 +14,7 @@ nor = "\033[1;38m"
 rojito = "\033[1;31m"
 fin = "\033[0m"
 
-#author: Mikis
-#telgram: @pes528
+#author @pes528
 
 def d(fun):
     def dib():
@@ -68,8 +67,12 @@ def mai():
       music()
     elif op == "0":
       os.system("clear")
+      time.sleep(2)
+      print("PARA VOLVER A INICIAR ->> python main.py")
+      time.sleep(2)
       exit()
     else:
+      time.sleep(1)
       print("OPCION INCORRECTA")
       main()
 
@@ -95,7 +98,7 @@ def mai():
 
 @d
 def music():
-    print("="*20, "MP3 DONWLOADER ", "="*20)
+    print(" ", "="*11, "MP3 DONWLOADER ", "="*11)
     print("Preciona 0 para volver")
     url = input("URL-->  ")
     if url == "0":
@@ -128,7 +131,7 @@ def music():
         return music()
 @d
 def descargarvideo():
-    print("="*17, "STANDAR DONWLOADER VIDEO", "="*17, "\n")
+    print("="*8, "STANDAR DONWLOADER VIDEO", "="*8, "\n")
     print("Preciona 0 para volver\n")
     url = input("URL-->  ")
     if url == "0":
