@@ -72,8 +72,9 @@ def mai():
       time.sleep(2)
       exit()
     else:
-      time.sleep(1)
+      
       print("OPCION INCORRECTA")
+      time.sleep(1)
       main()
 
 
