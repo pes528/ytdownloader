@@ -4,7 +4,7 @@ Todas las descargas se almacenan en la carpeta YTdescargas<br>
 Utilizar la version de python 3+<br>
 <br>
 
-<img style="width:100%" src="https://github.com/pes528/ytdownloader/blob/main/YT.png">
+<img style="width:auto;" src="https://github.com/pes528/ytdownloader/blob/main/YT.png">
 <br>
 
 
