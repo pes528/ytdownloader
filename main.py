@@ -49,33 +49,8 @@ def verifica(link):
 
 
 
-@d
-def mai():
-    
-    op = input("""
-    ===================================
-    1: DESCARGA NORMAL
-    2: DESCARGAR MP3()
-    0: SALIR
-    ===================================
-    
-    OPCION: """)
-    
-    if op == "1":
-      descargarvideo()
-    elif op == "2":
-      music()
-    elif op == "0":
-      os.system("clear")
-      time.sleep(1)
-      print("PARA VOLVER A INICIAR ->> python main.py")
-      
-      
-    else:
-      
-      print("OPCION INCORRECTA")
-      time.sleep(1)
-      main()
+
+
 
 
 """def most():
@@ -97,7 +72,7 @@ def mai():
       print("URL NO VALIDO")
       return most()"""
 
-@d
+
 def music():
     
     print(" ", "="*11, "MP3 DOWNLOADER ", "="*11)
@@ -131,7 +106,7 @@ def music():
         print("")
         print("URL NO VALIDO ")
         return music()
-@d
+
 def descargarvideo():
     
     print("="*8, "STANDAR DOWNLOADER VIDEO", "="*8, "\n")
@@ -139,7 +114,8 @@ def descargarvideo():
     url = input("URL-->  ")
     if url == "0":
         main()
-    try:
+    elif verifica(url) == True:
+
 
         yt = YouTube(url)
 
@@ -160,25 +136,30 @@ def descargarvideo():
             print("CALIDAD DISPONIBLE: ")
             for i in quality:
               print(i)
+        try:
 
-        dow=yt.streams.get_by_resolution(calidad)
-        print("DESCARGANDO....")
-        dow.download(output_path="YTdescargas")
-        for i in tqdm(range(10)):
-            time.sleep(0.5)
-        print("DESCARGA REALIZADA..")
-        print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
-        input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
+            dow=yt.streams.get_by_resolution(calidad)
+            print("DESCARGANDO....")
+            dow.download(output_path="YTdescargas")
+            for i in tqdm(range(10)):
+                time.sleep(0.5)
+            print("DESCARGA REALIZADA..")
+            print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
+            input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
         
-        return main()
+            return main()
         
-    except:
-        print("ALGO SALIO MAL, O LA URL NO ES VALIDA")
-        return descargarvideo()
+        except:
+            print("ALGO SALIO MAL, O LA URL NO ES VALIDA")
+            return main()
+    else:
+      print("ENLACE NO VALIDO")
+      time.sleep(1)
+      descargarvideo()
 
 
 
-@d
+
 def main():
     os.system("clear")
     if os.path.isdir("YTdescargas"):
@@ -186,7 +167,30 @@ def main():
     else:
       os.mkdir("YTdescargas")
     logo()
-    mai()
+    op = input("""
+    ===================================
+    1: DESCARGA NORMAL
+    2: DESCARGAR MP3()
+    0: SALIR
+    ===================================
+    
+    OPCION: """)
+    
+    if op == "1":
+      descargarvideo()
+    elif op == "2":
+      music()
+    elif op == "0":
+      os.system("clear")
+      time.sleep(2)
+      print("PARA VOLVER A INICIAR ->> python main.py")
+      
+      
+    else:
+      
+      print("OPCION INCORRECTA")
+      time.sleep(1)
+      main()
 
 
 if __name__ == "__main__":
