@@ -74,7 +74,7 @@ def verifica(link):
 
 
 def music():
-    
+    print(f"{rojito}—{fin}"*42)
     print(" ", "="*11, "MP3 DOWNLOADER ", "="*11)
     print("Preciona 0 para volver")
     url = input("URL-->  ")
@@ -108,7 +108,7 @@ def music():
         return music()
 
 def descargarvideo():
-    
+    print(f"{rojito}—{fin}"*42)
     print("="*8, "STANDAR DOWNLOADER VIDEO", "="*8, "\n")
     print("Preciona 0 para volver\n")
     url = input("URL-->  ")
@@ -150,7 +150,8 @@ def descargarvideo():
             return main()
         
         except:
-            print("ALGO SALIO MAL, O LA URL NO ES VALIDA")
+            print("NO SE PUDO REALIZAR LA DESCARGA")
+            time.sleep(1)
             return main()
     else:
       print("ENLACE NO VALIDO")
