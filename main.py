@@ -1,5 +1,5 @@
 #!/bin/python3
-import os
+import os, json
 import time
 try:
     from pytube import YouTube
@@ -13,8 +13,18 @@ from tqdm import tqdm
 nor = "\033[1;38m"
 rojito = "\033[1;31m"
 fin = "\033[0m"
+rutaTermux = "/data/data/com.termux/files/home/storage/downloads"
+
 
 #author @pes528
+
+def showRute():
+    if leerRuta() == True:
+        return ("/YTdescargas/")
+    else:
+        return (rutaTermux)
+    
+
 
 def d(fun):
     def dib():
@@ -32,12 +42,7 @@ def logo():
  ██║░░██║██║░░██║░░████╔═████║░██║╚████║
  ██████╔╝╚█████╔╝░░╚██╔╝░╚██╔╝░██║░╚███║
  ╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░░╚══╝""")
-    """print("\033[1;32m"+"__   _______   ____   _____        ___   _ _     ___    _    ____  _____ ____ \033[0m")
-    print("\033[1;32m"+"\ \ / /_   _| |  _ \ / _ \ \      / / \ | | |   / _ \  / \  |  _ \| ____|  _ \ \033[0m")   
-    print("\033[1;32m"+" \ V /  | |   | | | | | | \ \ /\ / /|  \| | |  | | | |/ _ \ | | | |  _| | |_) |\033[0m")
-    print("\033[1;32m"+"  | |   | |   | |_| | |_| |\ V  V / | |\  | |__| |_| / ___ \| |_| | |___|  _ < \033[0m")
-    print("\033[1;32m"+"  |_|   |_|   |____/ \___/  \_/\_/  |_| \_|_____\___/_/   \_\____/|_____|_| \_\ \033[0m")
-    print("")"""
+    
     print(" \033[1;101m                by @pes528              \033[0m")
     
 def verifica(link):
@@ -88,11 +93,15 @@ def music():
         try:
           e=yt.streams.get_audio_only()
           print("DESCARGANDO....")
-          e.download(output_path="YTdescargas", filename=titu)
+          if leerRuta() == True:
+
+              e.download(output_path="YTdescargas", filename=titu)
+          else:
+              e.download(output_path=rutaTermux, filename=titu)
           for i in tqdm(range(10)):
               time.sleep(0.5)
           print("DESCARGA REALIZADA..")
-          print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
+          print(f"ARCHIVO GUARDADO EN LA CARPETA {showRute()}\n")
           input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
           return main()
 
@@ -140,11 +149,15 @@ def descargarvideo():
 
             dow=yt.streams.get_by_resolution(calidad)
             print("DESCARGANDO....")
-            dow.download(output_path="YTdescargas")
+            if leerRuta() == True:
+
+                dow.download(output_path="YTdescargas")
+            else:
+                dow.download(output_path=rutaTermux)
             for i in tqdm(range(10)):
                 time.sleep(0.5)
             print("DESCARGA REALIZADA..")
-            print("ARCHIVO GUARDADO EN LA CARPETA YTdescargas/\n")
+            print(f"ARCHIVO GUARDADO EN LA CARPETA {showRute()}\n")
             input("PRECIONA CUALQUIER TECLA PARA VOLVER: ")
         
             return main()
@@ -157,6 +170,50 @@ def descargarvideo():
       print("ENLACE NO VALIDO")
       time.sleep(1)
       descargarvideo()
+
+
+def escribirRuta(op):
+    data = {"Default": op}
+    with open("config.json", "w") as f:
+        json.dump(data, f)
+
+def leerRuta():
+    with open("config.json", "r") as f:
+        dat = json.load(f)
+        return dat["Default"]
+
+
+def ruta():
+    os.system("clear")
+    print(f"{rojito}—{fin}"*42)
+    print(" ", "="*7, "CAMBIAR RUTA DE ALMACENAMIENTO ", "="*7, "\n")
+    print("")
+    op = input("""
+    RUTA DE DESCARGAS POR DEFECTO [/YTdescargas/]
+    ==================================================
+    1-> Mantener ruta por defecto
+    2-> Cambiar ruta [almacenamiento interno][termux]
+    0-> Volver al menu principal
+    ==================================================
+    OPCION--> """)
+    if op == "1":
+        escribirRuta(True)
+        print("RUTA POR DEFECTO [True]")
+        time.sleep(1)
+        main()
+    elif op == "2":
+        print("RECUERDA QUE DEBES TENER\nACCESO AL ALMACENAMENTO INTERNO")
+        escribirRuta(False)
+        print("RUTA CAMBIADA CON EXITO")
+        main()
+    elif op == "0":
+        main()
+    else:
+        print("OPCION INCORRECTA")
+        time.sleep()
+        ruta()
+
+
 
 
 
@@ -172,6 +229,7 @@ def main():
     ===================================
     1: DESCARGA NORMAL
     2: DESCARGAR MP3()
+    3: CAMBIAR RUTA DE ALMACENAMIENTO 
     0: SALIR
     ===================================
     
@@ -181,6 +239,8 @@ def main():
       descargarvideo()
     elif op == "2":
       music()
+    elif op == "3":
+      ruta()
     elif op == "0":
       os.system("clear")
       time.sleep(2)
@@ -195,6 +255,9 @@ def main():
 
 
 if __name__ == "__main__":
-    
+    if os.path.isfile("config.json"):
+        pass
+    else:
+        escribirRuta(True)
     main()
     
