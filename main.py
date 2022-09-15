@@ -67,10 +67,10 @@ def mai():
       music()
     elif op == "0":
       os.system("clear")
-      time.sleep(2)
+      time.sleep(1)
       print("PARA VOLVER A INICIAR ->> python main.py")
-      time.sleep(2)
-      exit()
+      
+      
     else:
       
       print("OPCION INCORRECTA")
