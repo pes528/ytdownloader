@@ -190,11 +190,13 @@ def ruta():
     print("")
     op = input("""
     RUTA DE DESCARGAS POR DEFECTO [/YTdescargas/]
-    ==================================================
-    1-> Mantener ruta por defecto
-    2-> Cambiar ruta [almacenamiento interno][termux]
-    0-> Volver al menu principal
-    ==================================================
+    ===========================================
+
+    1-> MANTENER RUTA POR DEFECTO
+    2-> CAMBIAR RUTA [almacenamiento interno]
+    0-> VOLVER
+
+    ===========================================
     OPCION--> """)
     if op == "1":
         escribirRuta(True)
@@ -203,8 +205,10 @@ def ruta():
         main()
     elif op == "2":
         print("RECUERDA QUE DEBES TENER\nACCESO AL ALMACENAMENTO INTERNO")
+        time.sleep(2)
         escribirRuta(False)
         print("RUTA CAMBIADA CON EXITO")
+        time.sleep(2)
         main()
     elif op == "0":
         main()
