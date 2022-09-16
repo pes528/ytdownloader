@@ -229,6 +229,7 @@ def main():
     else:
       os.mkdir("YTdescargas")
     logo()
+    print(f"RUTA:{rojito}{showRute()}{fin}")
     op = input("""
     ===================================
     1: DESCARGA NORMAL
