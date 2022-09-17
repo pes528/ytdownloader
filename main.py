@@ -214,7 +214,7 @@ def ruta():
         main()
     else:
         print("OPCION INCORRECTA")
-        time.sleep()
+        time.sleep(1)
         ruta()
 
 
