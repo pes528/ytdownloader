@@ -1,4 +1,13 @@
 #!/bin/python3
+
+
+#--------------------------------------------------------------
+#                             AUTHOR
+#                      TELEGRAM: @pes528
+#--------------------------------------------------------------
+
+
+
 import os, json
 import time
 try:
@@ -13,7 +22,6 @@ except:
     import requests
 from tqdm import tqdm
 
-#AUTHOR: 
 
 
 verde = "\033[1;102m"
